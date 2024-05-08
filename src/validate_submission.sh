@@ -134,7 +134,7 @@ echo "Starting Controller on port ${cport} with replication factor ${r}, timeout
 java -Djava.security.manager -Djava.security.policy=my_policy.policy Controller $cport $r $timeout $rebalance_period &
 controllerId=$!
 check_status
-sleep 1s
+sleep 1
 echo "Ok, Controller started"
 
 echo "Starting 3 Dstore processes on ports ${dport1}, ${dport2} and ${dport3} with timeout ${timeout}ms..."
@@ -160,7 +160,7 @@ echo ""
 if [ $wait_time -gt 0 ]
 then
 	echo "Waiting ${wait_time} seconds before terminating Controller and Dstore processes..."
-	sleep ${wait_time}s
+	sleep ${wait_time}
 	check_status
 
 	echo -n "Killing Controller and Dstore processes..."
